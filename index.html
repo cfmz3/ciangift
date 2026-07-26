@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Cian Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Аудио движок -->
+    <audio id="bg-music" loop preload="auto"></audio>
+    <audio id="sfx-chip" preload="auto"></audio>
+    <audio id="sfx-spin" preload="auto"></audio>
+    <audio id="sfx-win" preload="auto"></audio>
+    <audio id="sfx-card" preload="auto"></audio>
+
+    <!-- Контейнер приложения -->
+    <div id="app">
+        <!-- Холл -->
+        <div id="hall" class="scene active">
+            <div id="parallax-layer-1" class="parallax-bg"></div>
+            <div id="parallax-layer-2" class="parallax-bg"></div>
+            <div id="hall-floor"></div>
+            <div id="hall-tables">
+                <div class="table-spot" data-game="roulette" id="spot-roulette">
+                    <div class="table-glow"></div>
+                    <span class="table-label">Рулетка</span>
+                </div>
+                <div class="table-spot" data-game="crash" id="spot-crash">
+                    <div class="table-glow"></div>
+                    <span class="table-label">Краш</span>
+                </div>
+                <div class="table-spot" data-game="slots" id="spot-slots">
+                    <div class="table-glow"></div>
+                    <span class="table-label">Слоты</span>
+                </div>
+                <div class="table-spot" data-game="higherlower" id="spot-higherlower">
+                    <div class="table-glow"></div>
+                    <span class="table-label">Больше-Меньше</span>
+                </div>
+                <div id="wheel-pedestal" class="table-spot" data-game="wheel">
+                    <div class="table-glow"></div>
+                    <span class="table-label">Колесо</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Меню -->
+        <div id="side-menu">
+            <div id="menu-close">×</div>
+            <div id="menu-logo">Cian Gift</div>
+            <nav id="menu-nav">
+                <button class="menu-btn" data-nav="hall">🏛 Холл</button>
+                <button class="menu-btn" data-nav="roulette">🎡 Рулетка</button>
+                <button class="menu-btn" data-nav="crash">🚀 Краш</button>
+                <button class="menu-btn" data-nav="slots">🎰 Слоты</button>
+                <button class="menu-btn" data-nav="higherlower">🃏 Больше-Меньше</button>
+                <button class="menu-btn" data-nav="wheel">🎁 Колесо</button>
+                <hr>
+                <button class="menu-btn" data-nav="shop">🛒 Магазин</button>
+                <button class="menu-btn" data-nav="profile">👤 Профиль</button>
+                <button class="menu-btn" data-nav="settings">⚙️ Настройки</button>
+            </nav>
+        </div>
+        <div id="menu-overlay"></div>
+        <div id="top-bar">
+            <button id="btn-menu">☰</button>
+            <div id="balance-display">🪙 1 000</div>
+            <button id="btn-chat">💬</button>
+        </div>
+
+        <!-- Экраны игр -->
+        <div id="screen-roulette" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="roulette-container"></div>
+        </div>
+        <div id="screen-crash" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="crash-container"></div>
+        </div>
+        <div id="screen-slots" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="slots-container"></div>
+        </div>
+        <div id="screen-higherlower" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="higherlower-container"></div>
+        </div>
+        <div id="screen-wheel" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="wheel-container"></div>
+        </div>
+        <div id="screen-shop" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="shop-container"></div>
+        </div>
+        <div id="screen-profile" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="profile-container"></div>
+        </div>
+        <div id="screen-settings" class="game-screen">
+            <button class="btn-back">← Холл</button>
+            <div id="settings-container"></div>
+        </div>
+
+        <!-- Чат -->
+        <div id="chat-panel">
+            <div id="chat-header">💬 Чат <span id="chat-close">×</span></div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Сообщение...">
+                <button id="chat-send">→</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="assets.js"></script>
+    <script src="hall.js"></script>
+    <script src="roulette.js"></script>
+    <script src="crash.js"></script>
+    <script src="slot-emerald.js"></script>
+    <script src="higher-lower.js"></script>
+    <script src="wheel.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
